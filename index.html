@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Super Mario 64 EX (OpenGL ES) nightly d7ca2c0</title>
+    <style>
+      body {margin: 0;}
+      canvas {display: block;width: 100vw;height: 100vh;border: 0px none;background-color: black;}
+    </style>
+  </head>
+  <body>
+    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1></canvas>
+    <script type='text/javascript'>
+      var Module = {
+        canvas: (() => {
+          var canvas = document.getElementById('canvas')
+          canvas.addEventListener("webglcontextlost", (e) => { alert('WebGL context lost. You will need to reload the page.'); e.preventDefault(); }, false);
+          return canvas;
+        })()
+      };
+    </script>
+    <script async type="text/javascript" src="sm64.us.f3dex2e.js"></script>
+  </body>
+</html>
